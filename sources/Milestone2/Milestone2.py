@@ -10,7 +10,7 @@ U0 = [1, 0, 0, 1]
 
 ## Integration steps
 
-N = 1000
+N = 500
 t_fin = 10
 
 t = linspace(0, t_fin, N+1)
@@ -18,6 +18,9 @@ t = linspace(0, t_fin, N+1)
 ## Problem definition
 
 temp_sch = [Euler, Euler_Inv, RK4, CN]
+title_sch = ["Euler", "Inverse Euler", "Runge-Kutta 4", "Crank-Nicholson"]
+
+i = 0
 
 for scheme in temp_sch:
 
@@ -29,11 +32,13 @@ for scheme in temp_sch:
     Fx = U[:,2]
     Fy = U[:,3]
 
+    plt.figure(figsize=(5,5))
     plt.plot(x,y)
-    plt.title(format(scheme))
+    plt.title(title_sch[i])
     plt.show()
 
-    #plt.plot(Fx,Fy)
+    i = i+1
+
 
 
 

@@ -1,6 +1,16 @@
 from numpy import zeros, linspace, array, sqrt
 from scipy.optimize import newton
 
+"""
+    Inputs:
+        U: Vector de estado en tn
+        t: tn
+        dt: diferencial de tiempo
+        F: Funcion dU/dT = F (En este caso órbita de Kepler)
+
+    Outputs:
+        U: Vector de estado en tn+1
+"""
 
 def Euler(U, t, dt, F):
 
